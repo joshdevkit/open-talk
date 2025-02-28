@@ -26,10 +26,7 @@ export default function App() {
   const roomID = getUrlParams().get('roomID') || randomID(5);
   let myMeeting = async (element) => {
     const appID = Number(import.meta.env.VITE_ZEGOCLOUD_APP_ID);
-    const serverSecret = String(import.meta.env.VITE_ZEGOCLOUD_SERVER_SECRET);
-
-    console.log("App ID:", appID, typeof appID); // Should log a number
-    console.log("Server Secret:", serverSecret);
+    const serverSecret = String(import.meta.env.VITE_ZEGOCLOUD_SEVER_SECRET);
 
 
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, randomID(5), randomID(5));
